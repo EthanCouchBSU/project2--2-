@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6mcld3k0165"]
+
+[ext_resource type="Texture2D" uid="uid://chh2f6anw6nak" path="res://assets/OverWorldSprites/bush.png" id="1_7wh5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4infa"]
+size = Vector2(66, 44)
+
+[node name="plant" type="StaticBody2D"]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 22)
+shape = SubResource("RectangleShape2D_4infa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_7wh5w")

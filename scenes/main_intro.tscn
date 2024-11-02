@@ -1,0 +1,139 @@
+[gd_scene load_steps=5 format=3 uid="uid://du2go27ak8nf6"]
+
+[ext_resource type="Texture2D" uid="uid://mb4vcqyqra5d" path="res://assets/IMG_0107.png" id="1_mhf3y"]
+[ext_resource type="Script" path="res://scripts/intro_screen.gd" id="1_px8me"]
+[ext_resource type="LabelSettings" uid="uid://dm3otxl53kauv" path="res://button.tres" id="2_rrva2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pact2"]
+font_size = 25
+font_color = Color(0.681682, 0.133873, 0, 1)
+
+[node name="MainIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_px8me")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
+offset_left = 69.0
+offset_top = 110.0
+offset_right = 574.0
+offset_bottom = 236.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "
+"
+flat = true
+
+[node name="playBox" type="ColorRect" parent="MarginContainer/VBoxContainer/Play"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 505.0
+offset_bottom = 32.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Play"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 503.0
+offset_bottom = 35.0
+text = "Play the Game"
+label_settings = SubResource("LabelSettings_pact2")
+horizontal_alignment = 1
+
+[node name="credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+"
+flat = true
+
+[node name="creditBox" type="ColorRect" parent="MarginContainer/VBoxContainer/credits"]
+z_index = 1
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 503.0
+offset_bottom = 31.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/credits"]
+z_index = 1
+layout_mode = 0
+offset_top = -2.0
+offset_right = 503.0
+offset_bottom = 33.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_pact2")
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "
+"
+flat = true
+
+[node name="exitBox" type="ColorRect" parent="MarginContainer/VBoxContainer/Exit"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 503.0
+offset_bottom = 31.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Exit"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 503.0
+offset_bottom = 35.0
+text = "Quit out"
+label_settings = SubResource("LabelSettings_pact2")
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.5)
+scale = Vector2(0.477315, 0.338889)
+texture = ExtResource("1_mhf3y")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 105.0
+offset_top = 38.0
+offset_right = 601.0
+offset_bottom = 157.0
+text = "Zombie Quest"
+label_settings = ExtResource("2_rrva2")
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+z_index = -1
+layout_mode = 0
+offset_left = -2.0
+offset_top = 10.0
+offset_right = 341.0
+offset_bottom = 68.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

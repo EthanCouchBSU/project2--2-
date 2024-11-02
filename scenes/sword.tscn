@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnuovk0pkt54x"]
+
+[ext_resource type="Script" path="res://scripts/sword.gd" id="1_8rfu6"]
+[ext_resource type="Texture2D" uid="uid://cewjdj2aduqdd" path="res://assets/WeaponSprites/swordsheet.png" id="2_c3gie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxmtg"]
+size = Vector2(136, 102)
+
+[sub_resource type="Animation" id="Animation_ha2fv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3papf"]
+resource_name = "swing"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n7rph"]
+_data = {
+"RESET": SubResource("Animation_ha2fv"),
+"swing": SubResource("Animation_3papf")
+}
+
+[node name="Sword" type="Area2D"]
+script = ExtResource("1_8rfu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(129, -2)
+shape = SubResource("RectangleShape2D_bxmtg")
+disabled = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(127, 1)
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_c3gie")
+hframes = 4
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n7rph")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

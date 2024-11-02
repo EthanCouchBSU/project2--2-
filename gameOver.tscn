@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj8lfek24ery2"]
+
+[ext_resource type="Texture2D" uid="uid://dj0tepdpj1pf6" path="res://assets/Untitled_116.png" id="1_3hn5n"]
+[ext_resource type="LabelSettings" uid="uid://b226auus0eybf" path="res://game_over.tres" id="2_bww3l"]
+[ext_resource type="PackedScene" uid="uid://badg0iq5jidyy" path="res://scenes/return.tscn" id="3_7jq40"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(581, 323)
+scale = Vector2(0.55, 0.4)
+texture = ExtResource("1_3hn5n")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8379, 16.0856)
+mouse_force_pass_scroll_events = false
+color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 42.0
+offset_right = 853.0
+offset_bottom = 234.0
+scale = Vector2(1.32215, 1.79058)
+text = "GAME OVER"
+label_settings = ExtResource("2_bww3l")
+
+[node name="Return" parent="." instance=ExtResource("3_7jq40")]
+layout_mode = 1
+offset_left = 442.0
+offset_top = 370.0
+offset_right = 442.0
+offset_bottom = 370.0

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dci0rsgtq4voo"]
+
+[ext_resource type="Script" path="res://scripts/mainIntro.gd" id="1_r7ufj"]
+[ext_resource type="PackedScene" uid="uid://btuqcwaxktei0" path="res://scenes/credits.tscn" id="4_hdca4"]
+[ext_resource type="Texture2D" uid="uid://dj0tepdpj1pf6" path="res://assets/Untitled_116.png" id="4_r315h"]
+[ext_resource type="PackedScene" uid="uid://du2go27ak8nf6" path="res://scenes/main_intro.tscn" id="5_okcdn"]
+[ext_resource type="AudioStream" uid="uid://pg27p08wnrwn" path="res://assets/audio/youtube_1YOxIkzLynM_audio.mp3" id="5_r5o5t"]
+
+[node name="IntroScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r7ufj")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323.5)
+scale = Vector2(0.533796, 0.401852)
+texture = ExtResource("4_r315h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_r5o5t")
+autoplay = true
+
+[node name="Credits" parent="." instance=ExtResource("4_hdca4")]
+visible = false
+layout_mode = 1
+
+[node name="MainIntro" parent="." instance=ExtResource("5_okcdn")]
+visible = false
+layout_mode = 1

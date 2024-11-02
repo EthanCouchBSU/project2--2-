@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://b56cpotn40uug"]
+
+[ext_resource type="PackedScene" uid="uid://gk1ay3vsac6c" path="res://scenes/rock.tscn" id="1_oxs2k"]
+[ext_resource type="PackedScene" uid="uid://dn6mcld3k0165" path="res://scenes/plant.tscn" id="2_ckbyl"]
+[ext_resource type="PackedScene" uid="uid://jvc2q145qvid" path="res://scenes/speed_buff.tscn" id="3_4mrel"]
+[ext_resource type="PackedScene" uid="uid://cnebc4apywvsw" path="res://scenes/key.tscn" id="4_mj57d"]
+[ext_resource type="PackedScene" uid="uid://covmdy2awgcjk" path="res://scenes/ghost_enemy.tscn" id="5_sssop"]
+[ext_resource type="PackedScene" uid="uid://bfwhjhoslpa5b" path="res://scenes/ball_enemy.tscn" id="6_7vbo6"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="rocks" type="Node2D" parent="."]
+
+[node name="Rock" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1390, 54)
+
+[node name="Rock2" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1396, 536)
+
+[node name="Rock3" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1396, 700)
+
+[node name="Rock4" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1402, 870)
+
+[node name="Rock5" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1402, 1034)
+
+[node name="Rock6" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1402, 1204)
+
+[node name="Rock7" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1289, 1351)
+
+[node name="Rock8" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(1097, 1504)
+
+[node name="Rock9" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(984, 1606)
+
+[node name="Rock10" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(400, 1629)
+
+[node name="Rock11" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(152, 1634)
+
+[node name="Rock12" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(984, 1753)
+
+[node name="Rock13" parent="rocks" instance=ExtResource("1_oxs2k")]
+position = Vector2(978, 1889)
+
+[node name="plants" type="Node2D" parent="."]
+
+[node name="plant" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(1843, 1233)
+
+[node name="plant2" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(2455, 611)
+
+[node name="plant3" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(1769, 480)
+
+[node name="plant4" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(489, 1001)
+
+[node name="plant5" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(1027, 480)
+
+[node name="plant6" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(175, 777)
+
+[node name="plant7" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(2171, 1850)
+
+[node name="plant8" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(2363, 1734)
+
+[node name="plant9" parent="plants" instance=ExtResource("2_ckbyl")]
+position = Vector2(1597, 1674)
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="Key" parent="items" instance=ExtResource("4_mj57d")]
+position = Vector2(2043, 1661)
+
+[node name="speed buff" parent="items" instance=ExtResource("3_4mrel")]
+position = Vector2(147, 1858)
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="BallEnemy" parent="enemies" instance=ExtResource("6_7vbo6")]
+position = Vector2(264, 1231)
+
+[node name="BallEnemy2" parent="enemies" instance=ExtResource("6_7vbo6")]
+position = Vector2(777, 1027)
+
+[node name="GhostEnemy" parent="enemies" instance=ExtResource("5_sssop")]
+position = Vector2(1288, 1760)
+
+[node name="BallEnemy3" parent="enemies" instance=ExtResource("6_7vbo6")]
+position = Vector2(1079, 706)
+
+[node name="BallEnemy4" parent="enemies" instance=ExtResource("6_7vbo6")]
+position = Vector2(2332, 1212)

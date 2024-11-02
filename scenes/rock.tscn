@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gk1ay3vsac6c"]
+
+[ext_resource type="Texture2D" uid="uid://cgw3dcstygthx" path="res://assets/OverWorldSprites/rock.png" id="1_0vp35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u34oe"]
+size = Vector2(237, 145)
+
+[node name="Rock" type="StaticBody2D"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 46.5)
+shape = SubResource("RectangleShape2D_u34oe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0vp35")

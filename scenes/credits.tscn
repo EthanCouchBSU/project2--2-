@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://btuqcwaxktei0"]
+
+[ext_resource type="Script" path="res://scenes/back.gd" id="1_erxnw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8e3uj"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s1jnv"]
+font_size = 25
+font_color = Color(0.681682, 0.133873, 0, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 46.0
+offset_right = 1100.0
+offset_bottom = 599.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 113.0
+offset_right = 1105.0
+offset_bottom = 625.0
+text = "Intro Screen Music- 
+Thanatos Neon Genesis Evangelion Chiptune 8 Bit by 
+Neon Genesis Evangelion Chiptune
+
+In Game Music-
+Pokemon HGSS gb sounds Dark Cave
+
+Sound Effects-
+Royalty free sound effects from Pixabay
+
+"
+label_settings = SubResource("LabelSettings_8e3uj")
+
+[node name="back" type="Button" parent="."]
+z_index = 1
+offset_left = 68.0
+offset_top = 57.0
+offset_right = 323.0
+offset_bottom = 88.0
+text = "
+"
+script = ExtResource("1_erxnw")
+
+[node name="backBox" type="ColorRect" parent="back"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 255.0
+offset_bottom = 32.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 254.0
+offset_bottom = 35.0
+text = "Go Back"
+label_settings = SubResource("LabelSettings_s1jnv")
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="back" to="back" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="back" to="back" method="_on_mouse_exited"]
+[connection signal="pressed" from="back" to="back" method="_on_pressed"]
